@@ -1,0 +1,20 @@
+<h1 class="text-center mt-2">Mars Rover Photo's Viewer</h1>
+
+
+<div class="text-center mt-3">
+  <button type="button" [disabled]="this.loading" class="btn btn-dark p-2 m-1 btn-lg col-3" value="spirit" #spirit
+    (click)="getMarsPhotosWithFilter(spirit.value)">Spirit</button>
+  <button type="button" [disabled]="this.loading" class="btn btn-dark p-2 m-1 btn-lg col-3" value="opportunity"
+    #opportunity (click)="getMarsPhotosWithFilter(opportunity.value)">Opportunity</button>
+  <button type="button" [disabled]="this.loading" class="btn btn-dark p-2 m-1 btn-lg col-3" value="curiosity" #curiosity
+    (click)="getMarsPhotosWithFilter(curiosity.value)">Curiosity</button>
+</div>
+
+<app-card-mars-photo 
+    [hidden]="this.loading"
+    [marsPhotos]="this.marsPhotos">
+</app-card-mars-photo>
+
+<app-loading
+    [hidden]="!this.loading">
+</app-loading>

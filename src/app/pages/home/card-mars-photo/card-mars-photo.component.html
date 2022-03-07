@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row center-items">
+      <div class="card-deck col-4 mt-3" *ngFor="let item of marsPhotos">
+        <div class="card text-white bg-dark mb-3">
+          <!-- <div class="card-header">{{ item.rover.name }}</div> -->
+          <img class="card-img-top" [src]="item.img_src" style="min-width: 100px">
+          <div class="card-img-overlay">
+            <h5 class="card-title"> {{ item.camera.full_name }}</h5>
+            <h6 class="card-subtitle mb-2 text-white">{{ item.earth_date | date: 'dd/MM/yyyy'}}</h6>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> Rover {{ item.rover.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-white"><small>Launch date: {{ item.rover.launch_date | date: 'dd/MM/yyyy'}}</small></h6>
+            <h6 class="card-subtitle mb-2 text-white"><small>Landing date: {{ item.rover.landing_date | date: 'dd/MM/yyyy'}}</small></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
